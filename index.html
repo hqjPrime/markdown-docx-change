@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown 与 Word 互相转换工具</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 引入必要的库 -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mammoth@1.6.0/mammoth.browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Markdown 与 Word 互相转换工具</h1>
+        
+        <div class="converter-section">
+            <h2>选择转换类型</h2>
+            <div class="converter-options">
+                <button id="md-to-docx" class="converter-btn active">Markdown 转 Word</button>
+                <button id="docx-to-md" class="converter-btn">Word 转 Markdown</button>
+            </div>
+        </div>
+        
+        <div class="input-section">
+            <h2>输入内容</h2>
+            <div class="input-options">
+                <button id="input-file" class="option-btn">上传文件</button>
+                <button id="input-text" class="option-btn">手动输入</button>
+            </div>
+            <input type="file" id="file-input" accept=".md,.docx" style="display: none;">
+            <textarea id="text-input" placeholder="在此输入 Markdown 或 Word 内容"></textarea>
+        </div>
+        
+        <div class="convert-section">
+            <button id="convert-btn" class="convert-btn">开始转换</button>
+            <div id="status" class="status"></div>
+        </div>
+        
+        <div class="output-section">
+            <h2>输出结果</h2>
+            <button id="download-btn" class="download-btn" disabled>下载结果</button>
+            <div id="output-content" class="output-content"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
